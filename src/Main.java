@@ -68,7 +68,7 @@ public class Main {
         int cometActivityInterval = 79;
         int startTiming = 1823;
         int totalTime = startTiming + cometTimeInterval + cometsTimeIntervalInTheFuture;
-        for (; cometStart < totalTime; cometStart = cometStart + 79) {
+        for (; cometStart < totalTime; cometStart = cometStart + cometActivityInterval) {
             if (cometStart >= startTiming && cometActivityInterval % cometActivityInterval == 0) {
                 System.out.println(cometStart);
             }
