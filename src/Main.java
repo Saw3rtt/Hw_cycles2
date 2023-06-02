@@ -3,10 +3,10 @@ public class Main {
         //task1
         int money = 15000;
         int total = 0;
-        int i = 0;
-        for (; total < 2_459_000; i++) {
+        int target = 2459000;
+        for (int month = 0; total < target; month++) {
             total = total + money;
-            System.out.println("Месяц " + i + ",сумма накоплений равна " + total + " рублей");
+            System.out.println("Месяц " + month + ",сумма накоплений равна " + total + " рублей");
         }
         System.out.println();
         //task2
@@ -25,16 +25,16 @@ public class Main {
         int fertility = 17;
         int mortality = 8;
         int difference = fertility - mortality;
-        for (int p = 1; p <= 10; p++) {
+        for (int year = 1; year <= 10; year++) {
             population += population * difference / 1000;
-            System.out.println("Год " + p + ", численность населения составляет " + population);
+            System.out.println("Год " + year + ", численность населения составляет " + population);
         }
         System.out.println();
         //task4
-        int target = 12_000_000;
+        int target1 = 12_000_000;
         float sum = 15000f;
         float accumulation = 0.07f;
-        for (int c = 1; sum < target; c++) {
+        for (int c = 1; sum < target1; c++) {
             sum = sum * accumulation + sum;
             System.out.println("Месяц " + c + ",сумма накоплений равна " + (int) sum + " рублей");
             //task5
@@ -64,19 +64,14 @@ public class Main {
         //task8
         int cometTimeInterval = 200;
         int cometsTimeIntervalInTheFuture = 100;
-        int cometStart = 1823;
+        int cometStart = 0;
         int cometActivityInterval = 79;
-        int x = cometStart + cometTimeInterval + cometsTimeIntervalInTheFuture;
-        for (; cometStart < x; cometStart++) {
-
-            if (cometStart % cometActivityInterval == 0) {
+        int startTiming = 1823;
+        int totalTime = startTiming + cometTimeInterval + cometsTimeIntervalInTheFuture;
+        for (; cometStart < totalTime; cometStart = cometStart + 79) {
+            if (cometStart >= startTiming && cometActivityInterval % cometActivityInterval == 0) {
                 System.out.println(cometStart);
-
             }
-            }
-
         }
-
-
-
     }
+}
